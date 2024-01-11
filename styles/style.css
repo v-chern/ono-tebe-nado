@@ -308,6 +308,8 @@ address {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }
 
 /*стили для секции about*/
