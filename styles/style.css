@@ -1,12 +1,13 @@
 /* место для вашего кода */
 
 body{
-    background-color: grey;
+    background-color: #000;
+ 
 }
 
 .content-section {
     box-sizing: border-box;
-    max-width: 1052px;
+    max-width: 1100px;
     width: 100%;
 
     margin: auto;
@@ -40,15 +41,19 @@ body{
 
 .header__menu-list-item {
     list-style: circle;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .header__menu-list-item_no-bullit {
     list-style: none;
+    text-decoration: none;
 }
 
 .header__link {
     letter-spacing: 0.18px;
     text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .header__link-active {
@@ -62,7 +67,7 @@ body{
 }
 
 .header__logo-image {
-
+    width: 95%;
 }
 
 .header__address {
@@ -77,7 +82,9 @@ address {
 }
 
 .header__address-link {
-    
+    line-height: 24.3px;
+    letter-spacing: 0.18px;
+
 }
 
 .header__address-text {
@@ -90,14 +97,32 @@ address {
     background-image: url("../images/cover.jpg");
 
     background-repeat: no-repeat;
-    background-position: right center;
-    background-size: 100% auto;
+    background-position: center;
+    background-size: cover;
+    
+    position: relative;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    background-color: black;
+    opacity: 0.6;
 }
 
 .cover__title {
+    padding: 165px 50px 135px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-    padding: 165px 50px;
-
+.cover__title-line {
     color: #FFF;
     font-family: Raleway;
     font-size: 100px;
@@ -107,12 +132,9 @@ address {
     letter-spacing: 30px;
     text-transform: uppercase;
 }
-.cover__title-line {
-    display: block;
-}
 
-.cover__title-line_first {
-    line-height: 115%;
+.cover__title-line-first {
+    line-height: 115%; /* 100px */
 }
 
 .aligned-text {
@@ -132,14 +154,18 @@ address {
 }
 
 .no-letter-spacing {
-    letter-spacing: 0;
+    letter-spacing: 0px;
 }
 
 .cover__description {
-
+    padding-bottom: 51px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cover__description-text {
+    margin-left: 78px;
     color: #FFF;
     font-family: Raleway;
     font-size: 22px;
@@ -147,16 +173,17 @@ address {
     font-weight: 400;
     line-height: 28px; /* 127.273% */
     text-transform: uppercase;
+    word-spacing: 19px;
 }
 
-.cover__description-text_accent {
-    letter-spacing: 24.2px;
-}
 
-.bet_button {
+.bet-button {
     width: 256px;
     height: 51px;
+    padding: 12px 32px 11px 31px;
+    margin-right: 50px;
     border: 1px solid #FFF;
+
 
     color: #FFF;
 
@@ -169,25 +196,203 @@ address {
     text-transform: uppercase;
 }
 
-.footer {
+/*стили для секции Lots*/
+
+.lots {
+    padding-top: 179px;
+    padding-left: 24px;
+    padding-right: 24px; 
+}
+
+.lots__heading {
+    margin-left: 40px;
+    margin-bottom: 27px;
+
+    color: #000;
+    font-family: Raleway;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.lots__card-list {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    list-style: none;
+}
+
+.lots__card-list-item {
+    flex-grow: 1;
+}
+
+.card-link {
+    display: block;
+    height: 100%;
+}
+
+.card {
+    padding: 51px 40px 48px 40px;
+
+    width: 334px;
+    height: 563px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+}
+
+.card_type_film {
+    background-image: url("../images/card-lot-01.jpg");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    position: relative;
+    z-index: 0;
+}
+
+.card_type_book {
+    background-image: url("../images/card-lot-02.jpg");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    position: relative;
+    z-index: 0;
+}
+
+.card_type_picture {
+    background-image: url("../images/card-lot-03.jpg");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    position: relative;
+    z-index: 0;
+}
+
+.card__title {
+    color: #FFF;
+    font-family: Raleway;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 26.4px */
+    text-decoration-line: underline;
+    text-transform: uppercase;
+}
+
+.card__text {
+    color: #FFF;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 24px */
+}
+
+.lots__look-more-link {
+    display: block;
+    margin-top: 30px;
+    margin-left: 40px;
+
+    color: #000;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/*стили для секции about*/
+
+.about {
+    padding: 148px 24px 181px;
+
+    display: grid;
+    grid-template-columns: 334px auto;
+    grid-column-gap: 25px;
+    
+}
+
+.about__column {
+    justify-self: center;
+    align-self: start;
+}
+
+.about__logo {
+    width: 240px;
+    height: 240px;
+    background-color: #000;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+.about__logo-image {
+    width: 148px;
+    height: 114px; 
+}
+
+.about__title {
+    margin-top: 101px;
+    margin-bottom: 96px;
+
+    color: #000;
+    font-family: Raleway;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.about__text {
+    margin-bottom: 25px;
+
+    color: #000;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 120% */
+    letter-spacing: 0.2px;
+}
+
+/*стили для секции Footer*/
+
+.footer {
+    padding: 0px 50px 88px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+    color: #000;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
 }
 
 .footer__menu-list {
     list-style: none;
 }
 
-
-.about__logo {
-    width: 240px;
-    height: 240px;
-    background-color: #000;
-}
-
 .footer__social-list {
     display: flex;
+    gap: 48px;
 
     list-style: none;
 }
