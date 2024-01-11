@@ -1,8 +1,7 @@
 /* место для вашего кода */
 
-body{
+body {
     background-color: #000;
- 
 }
 
 .content-section {
@@ -243,8 +242,6 @@ address {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    
 }
 
 .card_type_film {
